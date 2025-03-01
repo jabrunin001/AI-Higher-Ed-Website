@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Maturity Accelerator | Education Specialists</title>
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #f97316;
+            --light: #f8fafc;
+            --dark: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 64, 175, 0.9), rgba(30, 64, 175, 0.7)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #ea580c;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+        }
+        
+        .maturity-levels {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .maturity-card {
+            flex: 1 1 300px;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .maturity-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .maturity-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .case-study {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .case-study h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .outcome-highlight {
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.25rem;
+            font-family: inherit;
+        }
+        
+        .submit-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-button:hover {
+            background-color: #1e3a8a;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DataMaturityX</div>
+                <div class="nav-links">
+                    <a href="#approach">Our Approach</a>
+                    <a href="#case-studies">Case Studies</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Educational Data into Actionable Insights</h1>
+            <p>We help higher education institutions at any data maturity level build connected, intelligent systems that drive better outcomes for students and staff.</p>
+            <a href="#contact" class="cta-button">Schedule a Data Maturity Assessment</a>
+        </div>
+    </section>
+    
+    <section id="approach" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Data Maturity Acceleration Approach</h2>
+                <p>We meet you where you are and build a roadmap to where you need to be</p>
+            </div>
+            
+            <div class="maturity-levels">
+                <div class="maturity-card">
+                    <h3>Level 1: Informal</h3>
+                    <p>Manual reporting processes, siloed data sources, limited visibility across departments</p>
+                </div>
+                <div class="maturity-card">
+                    <h3>Level 2: Developing</h3>
+                    <p>Basic data integration, departmental dashboards, emerging governance</p>
+                </div>
+                <div class="maturity-card">
+                    <h3>Level 3: Defined</h3>
+                    <p>Enterprise data warehouse, standardized metrics, cross-functional visibility</p>
+                </div>
+                <div class="maturity-card">
+                    <h3>Level 4: Advanced</h3>
+                    <p>Predictive analytics, automated data pipelines, decision-support systems</p>
+                </div>
+                <div class="maturity-card">
+                    <h3>Level 5: Optimized</h3>
+                    <p>AI-driven insights, real-time analytics, continuous improvement culture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="case-studies" class="section" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transformation Case Studies</h2>
+                <p>Real results for educational institutions</p>
+            </div>
+            
+            <div class="case-study">
+                <h3>Workflow Visibility Transformation</h3>
+                <p><strong>Challenge:</strong> A university had critical workflow data spread across 4 separate systems (SQL Server, Oracle), with departments unable to track turnaround times or bottlenecks.</p>
+                <p><strong>Solution:</strong> We implemented an Azure Data Factory ETL pipeline to aggregate and transform disparate data sources into a unified Azure SQL database, powering Tableau dashboards for real-time workflow monitoring.</p>
+                <p><strong>Outcome:</strong> <span class="outcome-highlight">33% reduction in processing time</span> by identifying and eliminating bottlenecks, with <span class="outcome-highlight">complete transparency</span> across three previously siloed departments.</p>
+            </div>
+            
+            <div class="case-study">
+                <h3>Student Success Early Warning System</h3>
+                <p><strong>Challenge:</strong> A community college struggled to identify at-risk students early enough for effective intervention.</p>
+                <p><strong>Solution:</strong> Integrated LMS, SIS, and attendance data through a modern data stack, creating AI-powered predictive models to flag students needing support.</p>
+                <p><strong>Outcome:</strong> <span class="outcome-highlight">Improved retention by 18%</span> through earlier interventions and <span class="outcome-highlight">reduced advisor workload by 25%</span> through automated prioritization.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>End-to-end data maturity acceleration</p>
+            </div>
+            
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Maturity Assessment</h3>
+                    <p>Comprehensive evaluation of your current capabilities across people, process, and technology</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>ETL Pipeline Development</h3>
+                    <p>Connect and transform data from any source with scalable, automated processes</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Dashboard Implementation</h3>
+                    <p>Powerful visualization solutions in PowerBI, Tableau, or custom platforms</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Implementation</h3>
+                    <p>From predictive analytics to AI assistants that transform how you work with data</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Data Architecture Design</h3>
+                    <p>Future-proof data infrastructure designed for your specific needs</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Data Capability Building</h3>
+                    <p>Training and knowledge transfer to build internal data expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Started</h2>
+                <p>Schedule your free data maturity assessment</p>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="institution">Institution</label>
+                        <input type="text" id="institution">
+                    </div>
+                    <div class="form-group">
+                        <label for="maturity">Current Data Maturity Level (Best Estimate)</label>
+                        <select id="maturity">
+                            <option value="1">Level 1: Informal/Ad-hoc</option>
+                            <option value="2">Level 2: Developing</option>
+                            <option value="3">Level 3: Defined</option>
+                            <option value="4">Level 4: Advanced</option>
+                            <option value="5">Level 5: Optimized</option>
+                            <option value="unsure">Unsure - Help Me Assess</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="challenge">Biggest Data Challenge</label>
+                        <textarea id="challenge" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Schedule Assessment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DataMaturityX - Educational Data Transformation Specialists</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
